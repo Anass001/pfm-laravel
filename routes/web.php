@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers;
+use App\Http\Controllers\IndexController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,8 +12,10 @@ use App\Http\Controllers;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/',[App\Http\Controllers\IndexController::class, 'index']); //
- // Route::get('/', function() {
+Route::get('/',[IndexController::class, 'index']); //
+Route::post('/seek',[IndexController::class, 'seek'] );
+
+// Route::get('/', function() {
  //     return "test";
  // }
  // );
