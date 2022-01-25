@@ -18,7 +18,7 @@ class Room extends Model
     }
 
     public function bookings(){
-        return $this->hasMany(Booking::Class);
+        return $this->belongsToMany(Booking::Class);
     }
 
     use HasFactory;
