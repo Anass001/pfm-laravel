@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title','home')
+@section('title','Home')
 
 @section('main-content')
 
@@ -9,7 +9,8 @@
                     <div class="container ie-h-align-center-fix">
                         <div class="row">
                             <div class="col-xs-12 ml-auto mr-auto ie-container-width-fix">
-                                <form action="index.html" method="get" class="tm-search-form tm-section-pad-2">
+                                <form action="/seek" method="post" class="tm-search-form tm-section-pad-2">
+                                    @csrf
                                     <div class="form-row tm-search-form-row">
                                         <div class="form-group tm-form-element tm-form-element-100">
                                             <i class="fa fa-map-marker fa-2x tm-form-element-icon"></i>
@@ -79,7 +80,7 @@
                                         </div>
                                       </div>
                                       <div class="form-row clearfix pl-2 pr-2 tm-fx-col-xs">
-                                          <p class="tm-margin-b-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                          <p class="tm-margin-b-0">Feel free to search or .... not  </p>
                                           <a href="#" class="ie-10-ml-auto ml-auto mt-1 tm-font-semibold tm-color-primary">Need Help?</a>
                                       </div>
                                 </form>
@@ -103,27 +104,27 @@
 
             <div class="tm-section tm-position-relative">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" class="tm-section-down-arrow">
-                    <polygon fill="#ee5057" points="0,0  100,0  50,60"></polygon>
+                    <polygon fill="#003580" points="0,0  100,0  50,60"></polygon>
                 </svg>
                 <div class="container tm-pt-5 tm-pb-4">
                     <div class="row text-center">
                         <article class="col-sm-12 col-md-4 col-lg-4 col-xl-4 tm-article">
                             <i class="fa tm-fa-6x fa-legal tm-color-primary tm-margin-b-20"></i>
-                            <h3 class="tm-color-primary tm-article-title-1">Pellentesque accumsan arcu nec dolor tempus</h3>
-                            <p>Pellentesque at velit ante. Duis scelerisque metus vel felis porttitor gravida. Donec at felis libero. Mauris odio tortor.</p>
-                            <a href="#" class="text-uppercase tm-color-primary tm-font-semibold">Continue reading...</a>
+                            <h3 class="tm-color-primary tm-article-title-1">Best homes ever</h3>
+                            <p>With more than 1111111111 property </p>
+                            <a href="#" class="text-uppercase tm-color-primary tm-font-semibold">Discorver more...</a>
                         </article>
                         <article class="col-sm-12 col-md-4 col-lg-4 col-xl-4 tm-article">
                             <i class="fa tm-fa-6x fa-plane tm-color-primary tm-margin-b-20"></i>
-                            <h3 class="tm-color-primary tm-article-title-1">Duis scelerisque metus vel felis porttitor</h3>
-                            <p>Pellentesque at velit ante. Duis scelerisque metus vel felis porttitor gravida. Donec at felis libero. Mauris odio tortor.</p>
-                            <a href="#" class="text-uppercase tm-color-primary tm-font-semibold">Continue reading...</a>
+                            <h3 class="tm-color-primary tm-article-title-1">Airplane Tickets</h3>
+                            <p>Affiliated with more than 111 airlines craps </p>
+                            <a href="#" class="text-uppercase tm-color-primary tm-font-semibold">Discorver more...</a>
                         </article>
                         <article class="col-sm-12 col-md-4 col-lg-4 col-xl-4 tm-article">
                             <i class="fa tm-fa-6x fa-life-saver tm-color-primary tm-margin-b-20"></i>
-                            <h3 class="tm-color-primary tm-article-title-1">Etiam aliquam arcu at mauris consectetur</h3>
-                            <p>Pellentesque at velit ante. Duis scelerisque metus vel felis porttitor gravida. Donec at felis libero. Mauris odio tortor.</p>
-                            <a href="#" class="text-uppercase tm-color-primary tm-font-semibold">Continue reading...</a>
+                            <h3 class="tm-color-primary tm-article-title-1">Best Trains ever</h3>
+                            <p>Just Ride it or leave it .</p>
+                            <a href="#" class="text-uppercase tm-color-primary tm-font-semibold">Discover more...</a>
                         </article>
                     </div>
                 </div>
@@ -161,7 +162,7 @@
                                 <article class="tm-bg-white mr-2 tm-carousel-item">
                                     <img src="img/img-02.jpg" alt="Image" class="img-fluid">
                                     <div class="tm-article-pad">
-                                        <header><h3 class="text-uppercase tm-article-title-2">Lorem ipsum dolor sit amet, consectetur</h3></header>
+                                        <header><h3 class="text-uppercase tm-article-title-2">Absolutely nothing </h3></header>
                                         <p>Suspendisse molestie sed dui eget faucibus. Duis accumsan sagittis tortor in ultrices. Praesent tortor ante, fringilla ac nibh porttitor, fermentum commodo nulla.</p>
                                         <a href="#" class="text-uppercase btn-primary tm-btn-primary">Detail Info.</a>
                                     </div>
