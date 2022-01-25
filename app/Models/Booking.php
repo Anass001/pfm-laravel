@@ -9,8 +9,8 @@ class Booking extends Model
 {
     protected $fillable = ['arrival_date', 'checkout_date', 'people_count', 'room_id', 'requested_room_type_id'];
 
-    public function guest(){
-        return $this->hasOne(Guest::class);
+    public function guests(){
+        return $this->hasMany(Guest::class);
     }
 
     public function user(){
