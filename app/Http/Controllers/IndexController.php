@@ -12,6 +12,6 @@ class IndexController extends BaseController
 
 
     public function index() {
-        return view('layouts.main');
+        return view('layouts.home');
     }
 }
