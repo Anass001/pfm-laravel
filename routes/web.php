@@ -1,8 +1,8 @@
 <?php
 
 use App\Http\Controllers\User\FindRoomController;
+use App\Http\Controllers\Admin\UsersContoller;
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,7 +22,7 @@ Route::get('/admin/properties',[\App\Http\Controllers\Admin\PropertiesController
 Route::post('/admin/properties/create',[\App\Http\Controllers\Admin\PropertiesController::class, 'create'] );
 Route::post('/admin/properties/edit',[\App\Http\Controllers\Admin\PropertiesController::class, 'edit'] );
 
-Route::post('/admin/users',[\App\Http\Controllers\Admin\UsersController::class, 'index'] );
+Route::get('/admin/users',[\App\Http\Controllers\Admin\UsersController::class, 'index'] );
 Route::post('/admin/users/create',[\App\Http\Controllers\Admin\UsersController::class, 'create'] );
 Route::post('/admin/users/edit',[\App\Http\Controllers\Admin\UsersController::class, 'edit'] );
 
