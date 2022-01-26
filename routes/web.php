@@ -14,22 +14,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/', [\App\Http\Controllers\User\HomeController::class, 'index']);
-Route::post('/seek',[FindRoomController::class, 'index'] );
+Route::post('/seek', [FindRoomController::class, 'index']);
 
-Route::get('/admin',[\App\Http\Controllers\Admin\HomeController::class, 'index'] );
+Route::get('/admin', [\App\Http\Controllers\Admin\HomeController::class, 'index']);
 
-Route::get('/admin/properties',[\App\Http\Controllers\Admin\PropertiesController::class, 'index'] );
-Route::post('/admin/properties/create',[\App\Http\Controllers\Admin\PropertiesController::class, 'create'] );
-Route::post('/admin/properties/edit',[\App\Http\Controllers\Admin\PropertiesController::class, 'edit'] );
+Route::get('/admin/properties', [\App\Http\Controllers\Admin\PropertiesController::class, 'index']);
+Route::post('/admin/properties/create', [\App\Http\Controllers\Admin\PropertiesController::class, 'create']);
+Route::post('/admin/properties/edit', [\App\Http\Controllers\Admin\PropertiesController::class, 'edit']);
 
-Route::post('/admin/users',[\App\Http\Controllers\Admin\UsersController::class, 'index'] );
-Route::post('/admin/users/create',[\App\Http\Controllers\Admin\UsersController::class, 'create'] );
-Route::post('/admin/users/edit',[\App\Http\Controllers\Admin\UsersController::class, 'edit'] );
+Route::post('/admin/users', [\App\Http\Controllers\Admin\UsersController::class, 'index']);
+Route::post('/admin/users/create', [\App\Http\Controllers\Admin\UsersController::class, 'create']);
+Route::post('/admin/users/edit', [\App\Http\Controllers\Admin\UsersController::class, 'edit']);
 
 // Route::get('/', function() {
- //     return "test";
- // }
- // );
+//     return "test";
+// }
+// );
 
 // Route::get('/', function () {
 //     return view('welcome');
