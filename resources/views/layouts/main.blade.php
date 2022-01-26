@@ -20,7 +20,9 @@ http://www.tooplate.com/view/2095-level
     <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
     <link rel="stylesheet" type="text/css" href="css/datepicker.css"/>
-    <link rel="stylesheet" href="css/tooplate-style.css">                                   <!-- Templatemo style -->
+    <link rel="stylesheet" href="css/tooplate-style.css">
+    <link rel="stylesheet" href="css/app.css">
+    <!-- Templatemo style -->
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -31,7 +33,7 @@ http://www.tooplate.com/view/2095-level
 </head>
 
     <body>
-        <div class="tm-main-content" id="top">
+        <div class="tm-main-content" id="top" style="position:relative;">
             <div class="tm-top-bar-bg"></div>
             <div class="tm-top-bar" id="tm-top-bar">
                 <!-- Top Navbar -->
@@ -39,7 +41,7 @@ http://www.tooplate.com/view/2095-level
                     <div class="row">
 
                         <nav class="navbar navbar-expand-lg narbar-light">
-                            <a class="navbar-brand mr-auto" href="#">
+                            <a class="navbar-brand mr-auto" href="/">
                                 Fst.com
                             </a>
                             <button type="button" id="nav-toggle" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#mainNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,7 +50,7 @@ http://www.tooplate.com/view/2095-level
                             <div id="mainNav" class="collapse navbar-collapse tm-bg-white">
                                 <ul class="navbar-nav ml-auto">
                                   <li class="nav-item">
-                                    <a class="nav-link" href="#top">Home <span class="sr-only">(current)</span></a>
+                                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                                   </li>
                                   <!--<li class="nav-item">
                                     <a class="nav-link" href="#tm-section-4">Portfolio</a>
@@ -58,7 +60,7 @@ http://www.tooplate.com/view/2095-level
                                   </li> --
                                     -->
                                   <li class="nav-item">
-                                    <a class="nav-link" href="#tm-section-6">Contact Us</a>
+                                    <a class="nav-link" href="/contact_us">Contact Us</a>
                                   </li>
                                 </ul>
                             </div>
@@ -68,15 +70,12 @@ http://www.tooplate.com/view/2095-level
             </div>
 
             <!-- Content here  -->
-            <div class="root">
                         @yield('main-content')
-            </div>
 
             <footer >
-                    <div style="display: flex; position:relative;width: 100%; height: 50px; bottom: 0;flex-direction:row;justify-content:center;background-color: #003580 ;color: white !important">
+                    <div style="display: flex; position:absolute;width: 100%; height: 50px; bottom: 0;flex-direction:row;justify-content:center;background-color: #003580 ;color: white !important">
                         <p style="margin: auto;">
                         Copyright &copy; <span class="tm-current-year">2018</span> Your Company
-
                         - Design: Tooplate</p>
                     </div>
                 </div>
