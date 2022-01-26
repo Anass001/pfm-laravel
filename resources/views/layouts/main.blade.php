@@ -51,10 +51,10 @@
                                 <a class="nav-link" href="#top">Home <span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#tm-section-4">Login</a>
+                                <a class="nav-link" href="/login">Login</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#tm-section-5">Register</a>
+                                <a class="nav-link" href="/register">Register</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#tm-section-6">Contact Us</a>
