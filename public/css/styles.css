@@ -11935,3 +11935,7 @@ body {
     height: 100px;
     border-radius: 8px;
 }
+
+.event-schedule-area .section-title .title-text {
+    margin-bottom: 50px;
+}

@@ -1,7 +1,7 @@
 @extends('admin.main')
 
 @section('title','users list')
-
+@section('logged_in','makarov')
 @section('main-content')
  <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade active show" id="home" role="tabpanel">
@@ -10,52 +10,72 @@
                                 <thead>
                                     <tr>
                                         <th class="text-center" scope="col">Date</th>
-                                        <th scope="col">Speakers</th>
-                                        <th scope="col">Session</th>
-                                        <th scope="col">Venue</th>
-                                        <th class="text-center" scope="col">Venue</th>
+                                        <th scope="col">first name</th>
+                                        <th scope="col">last name</th>
+                                        <th scope="col">email</th>
+                                        <th scope="col">dateOfBirth</th>
+                                        <th scope="col">photoUrl</th>
+                                        <th scope="col">zipCode</th>
+                                        <th scope="col">city</th>
+                                        <th scope="col">country</th>
+                                        <th class="text-center" scope="col">isAdmin</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach($data as $d)
                                     <tr class="inner-box">
                                         <th scope="row">
-                                            <div class="event-date">
-                                                <span>16</span>
-                                                <p>Novembar</p>
+                                            <div>
+                                                {{ $d['date'] }}
                                             </div>
                                         </th>
                                         <td>
-                                            <div class="event-img">
-                                                <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" />
+                                            <div>
+                                                {{ $d['firstName'] }}
                                             </div>
                                         </td>
                                         <td>
-                                            <div class="event-wrap">
-                                                <h3><a href="#">Harman Kardon</a></h3>
-                                                <div class="meta">
-                                                    <div class="organizers">
-                                                        <a href="#">Aslan Lingker</a>
-                                                    </div>
-                                                    <div class="categories">
-                                                        <a href="#">Inspire</a>
-                                                    </div>
-                                                    <div class="time">
-                                                        <span>05:35 AM - 08:00 AM 2h 25'</span>
-                                                    </div>
-                                                </div>
+                                            <div>
+                                                {{ $d['lastName'] }}
                                             </div>
                                         </td>
                                         <td>
-                                            <div class="r-no">
-                                                <span>Room B3</span>
+                                            <div>
+                                                 {{ $d['email'] }}
                                             </div>
                                         </td>
                                         <td>
-                                            <div class="primary-btn">
-                                                <a class="btn btn-primary" href="#">Read More</a>
+                                            <div>
+                                                {{ $d['dateOfBirth'] }}
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                {{ $d['photoUrl'] }}
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                {{ $d['zipCode'] }}
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                {{ $d['city']}}
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                {{ $d['country'] }}
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                {{ $d['isAdmin'] }}
                                             </div>
                                         </td>
                                     </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
