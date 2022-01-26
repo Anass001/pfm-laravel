@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Property extends Model
 {
-    protected $fillable = ['title', 'description', 'property_type', 'address', 'zip_code', 'city', 'country'];
+    protected $fillable = ['title', 'description', 'property_type', 'regular_room_price', 'address', 'zip_code', 'city', 'country'];
 
     public function reviews(){
         return $this->hasMany(Review::class);
