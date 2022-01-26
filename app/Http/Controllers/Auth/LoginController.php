@@ -3,38 +3,36 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
+
+use App\Models\User;
 
 class LoginController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Login Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles authenticating users for the application and
-    | redirecting them to your home screen. The controller uses a trait
-    | to conveniently provide its functionality to your applications.
-    |
-    */
-
-    use AuthenticatesUsers;
-
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
-    protected $redirectTo = RouteServiceProvider::HOME;
-
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    function index()
     {
-        $this->middleware('guest')->except('logout');
+        return view('auth.login');
+    }
+
+    function login(Request $request)
+    {
+        $login = $request->input('login');
+
+        $field = filter_var($login, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
+        $request->validate([
+            'login' => 'required',
+            'password' => 'required',
+        ]);
+        Auth::attempt([$field => $login, 'password' => $request->password]);
+
+        if (Auth::check())
+            return redirect()->intended('dashboard');
+
+        return redirect()->back()->withErrors([
+            'credentials' => 'Please verify your email and password'
+        ]);
     }
 }

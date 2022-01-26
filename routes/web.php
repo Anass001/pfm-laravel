@@ -46,6 +46,20 @@ Route::get('/admin', [\App\Http\Controllers\Admin\HomeController::class, 'index'
 
 //Route::get('/home', [\App\Http\Controllers\Admin\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+Route::get('/register', [RegisterController::class, 'index'])->name('register');
+Route::post('/register', [RegisterController::class, 'store']);
+
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/login', [LoginController::class, 'login']);
+
+Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
+
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
