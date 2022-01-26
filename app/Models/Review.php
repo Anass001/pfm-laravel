@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Review extends Model
 {
-    protected $fillable = ['description', 'property_id'];
+    protected $fillable = ['property_id', 'description', 'rating'];
 
     public function property(){
         return $this->belongsTo(Property::class);

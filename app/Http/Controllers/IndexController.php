@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\View\Components\Alert;
 use Illuminate\Routing\Controller as BaseController;
 use App\Http\Controllers\Controller;
-
 
 
 class IndexController extends BaseController
@@ -38,10 +38,9 @@ class IndexController extends BaseController
         );
         $form_data = array($d1, $d2, $d3, $d4);
         return view('layouts.found',['form_data' => $form_data]);
-        //dd($request);
-    }
-
-    public function index() {
+}
+    public function index()
+    {
         return view('layouts.home');
     }
 }

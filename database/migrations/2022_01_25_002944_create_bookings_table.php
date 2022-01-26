@@ -23,8 +23,6 @@ class CreateBookingsTable extends Migration
             $table->integer('people_count');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->cascadeOnDelete();
-            $table->unsignedBigInteger('room_id');
-            $table->foreign('room_id')->references('id')->on('rooms')->cascadeOnDelete();
             $table->unsignedBigInteger('requested_room_type_id');
             $table->foreign('requested_room_type_id')->references('id')->on('room_types')->cascadeOnDelete();
             $table->integer('total_price');

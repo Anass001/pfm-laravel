@@ -12,8 +12,10 @@ use App\Http\Controllers\IndexController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/',[IndexController::class, 'index']); //
+Route::get('/', [IndexController::class, 'index']);
 Route::post('/seek',[IndexController::class, 'seek'] );
+
+Route::get('/admin', [\App\Http\Controllers\Admin\HomeController::class, 'index']); //
 
 // Route::get('/', function() {
  //     return "test";
@@ -43,3 +45,7 @@ Route::post('/seek',[IndexController::class, 'seek'] );
 // Auth::routes();
 
 //Route::get('/home', [\App\Http\Controllers\Admin\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

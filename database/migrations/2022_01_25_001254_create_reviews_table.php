@@ -18,6 +18,7 @@ class CreateReviewsTable extends Migration
             $table->unsignedBigInteger('property_id');
             $table->unsignedBigInteger('user_id');
             $table->string('description');
+            $table->float('rating');
             $table->foreign('property_id')->references('id')->on('properties')->cascadeOnDelete();
             $table->foreign('user_id')->references('id')->on('users')->cascadeOnDelete();
             $table->timestamps();

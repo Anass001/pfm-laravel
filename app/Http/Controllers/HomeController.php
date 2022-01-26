@@ -1,9 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
-use Illuminate\Routing\Controller;
-use function view;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
