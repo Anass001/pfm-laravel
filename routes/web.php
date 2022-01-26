@@ -12,7 +12,7 @@ use App\Http\Controllers\IndexController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/',[IndexController::class, 'index']); //
+Route::get('/', [IndexController::class, 'index']); //
 Route::post('/seek',[IndexController::class, 'seek'] );
 
 // Route::get('/', function() {
