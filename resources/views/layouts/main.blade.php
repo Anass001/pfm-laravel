@@ -50,7 +50,7 @@
                     <div id="mainNav" class="collapse navbar-collapse tm-bg-white">
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="#top">Home <span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/login">Login</a>
@@ -59,7 +59,7 @@
                                 <a class="nav-link" href="/register">Register</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#tm-section-6">Contact Us</a>
+                                <a class="nav-link" href="/contact_us">Contact Us</a>
                             </li>
                         </ul>
                     </div>
