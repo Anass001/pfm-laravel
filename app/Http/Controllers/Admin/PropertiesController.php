@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Review;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use \App\Models\Property;
@@ -64,7 +65,6 @@ class PropertiesController extends Controller
     public function show($id)
     {
         $property = Property::find($id);
-
         // show the view and pass the property to it
         return view('admin.properties.show', ['property' => $property]);
     }

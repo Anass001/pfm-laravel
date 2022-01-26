@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Illuminate\Support\Facades\Auth;
 use App\Models\Booking;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -45,6 +46,7 @@ class BookingsController extends Controller
         $booking->arrival_date = $request->arrival_date;
         $booking->checkout_date = $request->checkout_date;
         $booking->people_count = $request->people_count;
+        $booking->user_id = Auth::id();
         $booking->room_id = $request->room_id;
         $booking->requested_room_type_id = $request->requested_room_type_id;
         $booking->save();
