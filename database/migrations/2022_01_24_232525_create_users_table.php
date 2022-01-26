@@ -19,12 +19,12 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->date('date_of_birth');
-            $table->string('photo_url');
-            $table->string('zip_code');
-            $table->string('city');
-            $table->string('country');
-            $table->boolean('isAdmin');
+            // $table->date('date_of_birth');
+            // $table->string('photo_url');
+            // $table->string('zip_code');
+            // $table->string('city');
+            // $table->string('country');
+            // $table->boolean('isAdmin');
             $table->rememberToken();
             $table->timestamps();
         });

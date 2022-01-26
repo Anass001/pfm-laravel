@@ -20,16 +20,16 @@ class LoginController extends Controller
     function login(Request $request)
     {
         $login = $request->input('login');
-
-        $field = filter_var($login, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
+        $field = filter_var($login, FILTER_VALIDATE_EMAIL) ? 'email' : 'name';
         $request->validate([
             'login' => 'required',
             'password' => 'required',
         ]);
+
         Auth::attempt([$field => $login, 'password' => $request->password]);
 
         if (Auth::check())
-            return redirect()->intended('dashboard');
+            return redirect()->route('home');
 
         return redirect()->back()->withErrors([
             'credentials' => 'Please verify your email and password'
