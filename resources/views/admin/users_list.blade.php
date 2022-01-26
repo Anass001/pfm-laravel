@@ -71,8 +71,12 @@
                                         </td>
                                         <td>
                                             <div>
-                                                {{ $d['isAdmin'] }}
+                                                {{ (bool) $d['isAdmin'] }}
                                             </div>
+                                        </td>
+                                        <td>
+                                            <a href="edit/{{ $d['id'] }}">edit</a>
+                                            <a href="delete/{{ $d['id'] }}">delete</a>
                                         </td>
                                     </tr>
                                     @endforeach

@@ -9,6 +9,7 @@ class UsersController extends Controller
      public function index() {
          //replace the queries
         $d1 = array(
+                    'id' => 0,
                     'date' => "12/2",
                     'firstName' => "Pay",
                     'lastName' => "last name",
@@ -20,7 +21,8 @@ class UsersController extends Controller
                     'country' => "morocco",
                     'isAdmin' => true);
         $d2 = array(
-            'date' => "10/03",
+                    'id' => 1,
+                    'date' => "10/03",
                     'firstName' => "Paysqd",
                     'lastName' => "last name sqds",
                     'email' => "emai01l@sss.com",
