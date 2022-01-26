@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\User;
 
-use Illuminate\Routing\Controller;
+use App\Http\Controllers\Controller;
 use function view;
 
 class HomeController extends Controller
@@ -24,6 +24,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('admin.main');
+        return view('layouts.home');
     }
 }

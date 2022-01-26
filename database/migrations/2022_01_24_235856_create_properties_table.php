@@ -22,6 +22,7 @@ class CreatePropertiesTable extends Migration
             $table->integer('zip_code');
             $table->string('city');
             $table->string('country');
+            $table->float('regular_room_price');
             $table->float('rating');
             $table->timestamps();
         });

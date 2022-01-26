@@ -1,7 +1,8 @@
 <?php
 
+use App\Http\Controllers\User\FindRoomController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\IndexController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,10 +13,18 @@ use App\Http\Controllers\IndexController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', [IndexController::class, 'index']);
-Route::post('/seek',[IndexController::class, 'seek'] );
+Route::get('/', [\App\Http\Controllers\User\HomeController::class, 'index']);
+Route::post('/seek',[FindRoomController::class, 'index'] );
 
-Route::get('/admin', [\App\Http\Controllers\Admin\HomeController::class, 'index']); //
+Route::get('/admin',[\App\Http\Controllers\Admin\HomeController::class, 'index'] );
+
+Route::get('/admin/properties',[\App\Http\Controllers\Admin\PropertiesController::class, 'index'] );
+Route::post('/admin/properties/create',[\App\Http\Controllers\Admin\PropertiesController::class, 'create'] );
+Route::post('/admin/properties/edit',[\App\Http\Controllers\Admin\PropertiesController::class, 'edit'] );
+
+Route::post('/admin/users',[\App\Http\Controllers\Admin\UsersController::class, 'index'] );
+Route::post('/admin/users/create',[\App\Http\Controllers\Admin\UsersController::class, 'create'] );
+Route::post('/admin/users/edit',[\App\Http\Controllers\Admin\UsersController::class, 'edit'] );
 
 // Route::get('/', function() {
  //     return "test";
@@ -48,4 +57,4 @@ Route::get('/admin', [\App\Http\Controllers\Admin\HomeController::class, 'index'
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [\App\Http\Controllers\User\HomeController::class, 'index'])->name('home');

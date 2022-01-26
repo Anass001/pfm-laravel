@@ -21,9 +21,7 @@
     <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
     <link rel="stylesheet" type="text/css" href="css/datepicker.css"/>
-    <link rel="stylesheet" href="css/tooplate-style.css">
-    <link rel="stylesheet" href="css/app.css">
-    <!-- Templatemo style -->
+    <link rel="stylesheet" href="css/tooplate-style.css">                                   <!-- Templatemo style -->
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -68,7 +66,10 @@
         </div>
     </div>
 
+    <!-- Content here  -->
+    <div class="root">
         @yield('main-content')
+    </div>
 
     <footer>
         <div
