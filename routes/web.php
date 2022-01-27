@@ -3,6 +3,10 @@
 use App\Http\Controllers\User\FindRoomController;
 use App\Http\Controllers\Admin\UsersContoller;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\LogoutController;
+use App\Http\Controllers\DashboardController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -55,6 +59,20 @@ Route::post('/admin/users/edit',[\App\Http\Controllers\Admin\UsersController::cl
 
 //Route::get('/home', [\App\Http\Controllers\Admin\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
+// Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+Route::get('/register', [RegisterController::class, 'index'])->name('register');
+Route::post('/register', [RegisterController::class, 'store']);
+
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/login', [LoginController::class, 'login']);
+
+Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
+
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
 
 Route::get('/home', [\App\Http\Controllers\User\HomeController::class, 'index'])->name('home');
