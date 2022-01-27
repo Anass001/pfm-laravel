@@ -6,13 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>@yield('title')</title>
-    <!--
 
-    Template 2095 Level
-
-    http://www.tooplate.com/view/2095-level
-
-    -->
     <!-- load stylesheets -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
     <!-- Google web font "Open Sans" -->
@@ -23,12 +17,6 @@
     <link rel="stylesheet" type="text/css" href="css/datepicker.css"/>
     <link rel="stylesheet" href="css/tooplate-style.css">                                   <!-- Templatemo style -->
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
 </head>
 
 <body>
@@ -47,18 +35,21 @@
                     </button>
                     <div id="mainNav" class="collapse navbar-collapse tm-bg-white">
                         <ul class="navbar-nav ml-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/login">Login</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/register">Register</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/contact_us">Contact Us</a>
-                            </li>
+                            @if(Auth::check() == false)
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{route('login')}}">Login</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{route('register')}}">Register</a>
+                                </li>
+                            @else
+                                <li class="nav-item">
+                                    <form action="{{route('logout')}}" method="post">
+                                        @csrf
+                                        <input style="border:none; width:100%; cursor: pointer;" type="submit" class="nav-link text-left" value="{{__('Logout')}}">
+                                    </form>
+                                </li>
+                            @endif
                         </ul>
                     </div>
                 </nav>
@@ -66,7 +57,6 @@
         </div>
     </div>
 
-    <!-- Content here  -->
     <div class="root">
         @yield('main-content')
     </div>
@@ -151,17 +141,23 @@
     }
 
     function setPageNav() {
-        if ($(window).width() > 991) {
-            $('#tm-top-bar').singlePageNav({
-                currentClass: 'active',
-                offset: 79
-            });
-        } else {
-            $('#tm-top-bar').singlePageNav({
-                currentClass: 'active',
-                offset: 65
-            });
-        }
+        // try {
+        //     if ($(window).width() > 991) {
+        //         $('#tm-top-bar').singlePageNav({
+        //             currentClass: 'active',
+        //             offset: 79
+        //         });
+        //     } 
+        //     else {
+        //         $('#tm-top-bar').singlePageNav({
+        //             currentClass: 'active',
+        //             offset: 65
+        //         });
+        //     }   
+        // }
+        // catch (error) {
+        //     console.log('HELLO ENEMIES :DD')
+        // }
     }
 
     function togglePlayPause() {
@@ -192,35 +188,35 @@
         // Google Map
         loadGoogleMap();
 
-        // Date Picker
+        // // Date Picker
         const pickerCheckIn = datepicker('#inputCheckIn');
         const pickerCheckOut = datepicker('#inputCheckOut');
 
-        // Slick carousel
+        // // Slick carousel
         setCarousel();
         setPageNav();
 
-        $(window).resize(function () {
-            setCarousel();
-            setPageNav();
-        });
+        // $(window).resize(function () {
+        //     setCarousel();
+        //     setPageNav();
+        // });
 
-        // Close navbar after clicked
-        $('.nav-link').click(function () {
-            $('#mainNav').removeClass('show');
-        });
+        // // Close navbar after clicked
+        // $('.nav-link').click(function () {
+        //     $('#mainNav').removeClass('show');
+        // });
 
-        // Control video
-        $('.tm-btn-play').click(function () {
-            togglePlayPause();
-        });
+        // // Control video
+        // $('.tm-btn-play').click(function () {
+        //     togglePlayPause();
+        // });
 
-        $('.tm-btn-pause').click(function () {
-            togglePlayPause();
-        });
+        // $('.tm-btn-pause').click(function () {
+        //     togglePlayPause();
+        // });
 
-        // Update the current year in copyright
-        $('.tm-current-year').text(new Date().getFullYear());
+        // // Update the current year in copyright
+        // $('.tm-current-year').text(new Date().getFullYear());
     });
 
 </script>

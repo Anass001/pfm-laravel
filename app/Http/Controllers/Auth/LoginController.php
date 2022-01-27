@@ -12,12 +12,17 @@ use App\Models\User;
 
 class LoginController extends Controller
 {
-    function index()
+    public function __construct()
+    {
+        $this->middleware('guest');
+    }
+
+    public function index()
     {
         return view('auth.login');
     }
 
-    function login(Request $request)
+    public function login(Request $request)
     {
         $login = $request->input('login');
         $field = filter_var($login, FILTER_VALIDATE_EMAIL) ? 'email' : 'name';
