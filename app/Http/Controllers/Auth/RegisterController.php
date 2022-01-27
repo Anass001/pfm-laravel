@@ -12,6 +12,11 @@ use App\Models\User;
 
 class RegisterController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('guest');
+    }
+
     public function index()
     {
         return view('auth.register');
@@ -27,7 +32,8 @@ class RegisterController extends Controller
         User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => Hash::make($request->password)
+            'password' => Hash::make($request->password),
+            'isAdmin' => 0
         ]);
 
         Auth::attempt($request->only('email', 'password'));
