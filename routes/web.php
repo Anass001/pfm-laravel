@@ -18,6 +18,7 @@ use App\Http\Controllers\DashboardController;
 |
 */
 Route::get('/', [\App\Http\Controllers\User\HomeController::class, 'index']);
+Route::get('/articles/{title}', [\App\Http\Controllers\User\HomeController::class, 'articles']);
 Route::post('/seek',[FindRoomController::class, 'index'] );
 
 Route::get('/admin',[\App\Http\Controllers\Admin\HomeController::class, 'index'] );
@@ -70,9 +71,9 @@ Route::post('/login', [LoginController::class, 'login']);
 Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
 
 Route::get('/home', [\App\Http\Controllers\User\HomeController::class, 'index'])->name('home');

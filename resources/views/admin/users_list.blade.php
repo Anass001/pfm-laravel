@@ -1,5 +1,4 @@
 @extends('admin.main')
-
 @section('title','users list')
 @section('logged_in','makarov')
 @section('main-content')
@@ -85,7 +84,4 @@
                         </div>
                     </div>
  </div>
-
-
-
 @endsection

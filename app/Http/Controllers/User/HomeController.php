@@ -26,4 +26,25 @@ class HomeController extends Controller
     {
         return view('layouts.home');
     }
+
+    public function articles($title) {
+        $d1 = array(
+            'title' => 'Lost Angeles',
+            'short_details' => 'this is a short details',
+            'text' => 'sqdqsdsqfhezdgzegoidshgodshgohdsoighdsoighsoidhgoisdhgoidshgsoifdihgsdoighsdoihgsdoighsdoighsdoighsdoihgsdoihgoisdhgoisdhgoisdh'
+        );
+
+        $d2 = array(
+            'title' => 'Not lost angeles',
+            'short_details' => 'this is a short details',
+            'text' => 'sqdqsdsqfhezdgzegoidshgodshgohdsoighdsoighsoidhgoisdhgoidshgsoifdihgsdoighsdoihgsdoighsdoighsdoighsdoihgsdoihgoisdhgoisdhgoisdh'
+        );
+        $d3 = array(
+              'title' => 'Not lost',
+              'short_details' => 'this is a shorter short details',
+              'text' => 'sqdqsdsqfhezdgzegoidshgodshgohdsqsdqsdqsdoighdsoighsoidhgoisdhgoidshgsoifdihgsdoighsdoihgsdoighsdoighsdoighsdoihgsdoihgoisdhgoisdhgoisdh'
+        );
+        $data = array($d1, $d2, $d3);
+        return view("extra.articles")->with('data', $d3);
+    }
 }
