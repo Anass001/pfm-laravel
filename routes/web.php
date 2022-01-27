@@ -33,14 +33,15 @@ Route::post('/admin/properties/store', [PropertiesController::class, 'store'])->
 
 //properties - user
 Route::post('/properties/{id}', [\App\Http\Controllers\User\PropertiesController::class, 'show'])->name('viewProperty');
+//Route::get('/property/{title}', [HomeController::class, 'property']);
 
-//users
+//users - admin
 Route::get('/admin/users', [UsersController::class, 'index'])->name('viewUsers');
 Route::post('/admin/users/edit', [UsersController::class, 'edit'])->name('editUser');
 Route::post('/admin/users/delete{id}', [UsersController::class, 'destroy'])->name('deleteUser');
 Route::post('/admin/users/update/{id}', [UsersController::class, 'update'])->name('updateUser');
 
-//bookings
+//bookings - admin
 Route::get('/admin/bookings', [BookingsController::class, 'index'])->name('viewBookings');;
 Route::get('/admin/bookings/create', [BookingsController::class, 'create'])->name('createBooking');;
 Route::post('/admin/bookings/edit', [BookingsController::class, 'edit'])->name('editBooking');;
