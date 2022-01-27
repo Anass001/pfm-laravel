@@ -17,6 +17,7 @@ class CreateRoomTypesTable extends Migration
             $table->id();
             $table->string('description');
             $table->integer('rate');
+            $table->integer('max_occupancy');
             $table->timestamps();
         });
     }

@@ -19,6 +19,7 @@ class CreateBookingsTable extends Migration
             $table->foreign('property_id')->references('id')->on('properties')->cascadeOnDelete();
             $table->date('arrival_date');
             $table->date('checkout_date');
+            // generated automatically by calculating (checkout_date - arrival_date + 1)
             $table->integer('nights');
             $table->integer('people_count');
             $table->unsignedBigInteger('user_id');

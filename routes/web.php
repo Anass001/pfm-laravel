@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\Admin\BookingsController;
+use App\Http\Controllers\Admin\PropertiesController;
+use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\User\FindRoomController;
+use App\Http\Controllers\User\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,48 +17,35 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', [\App\Http\Controllers\User\HomeController::class, 'index']);
-Route::post('/seek', [FindRoomController::class, 'index']);
 
-Route::get('/admin', [\App\Http\Controllers\Admin\HomeController::class, 'index']);
+//main
+Route::get('/', [HomeController::class, 'index']);
+Route::post('/results', [FindRoomController::class, 'index'])->name('showResults');
+Route::get('/admin', [App\Http\Controllers\Admin\HomeController::class, 'index']);
 
-Route::get('/admin/properties', [\App\Http\Controllers\Admin\PropertiesController::class, 'index']);
-Route::post('/admin/properties/create', [\App\Http\Controllers\Admin\PropertiesController::class, 'create']);
-Route::post('/admin/properties/edit', [\App\Http\Controllers\Admin\PropertiesController::class, 'edit']);
+//properties
+Route::get('/admin/properties', [PropertiesController::class, 'index'])->name('viewProperties');
+Route::get('/admin/properties/create', [PropertiesController::class, 'create'])->name('createProperty');
+Route::post('/admin/properties/edit/{id}', [PropertiesController::class, 'edit'])->name('editProperty');
+Route::post('/admin/properties/delete/{id}', [PropertiesController::class, 'destroy'])->name('deleteProperty');
+Route::post('/admin/properties/update/{id}', [PropertiesController::class, 'update'])->name('updateProperty');
+Route::post('/admin/properties/store', [PropertiesController::class, 'store'])->name('storeProperty');
 
-Route::post('/admin/users', [\App\Http\Controllers\Admin\UsersController::class, 'index']);
-Route::post('/admin/users/create', [\App\Http\Controllers\Admin\UsersController::class, 'create']);
-Route::post('/admin/users/edit', [\App\Http\Controllers\Admin\UsersController::class, 'edit']);
+//users
+Route::get('/admin/users', [UsersController::class, 'index'])->name('viewUsers');
+Route::post('/admin/users/edit', [UsersController::class, 'edit'])->name('editUser');
+Route::post('/admin/users/delete{id}', [UsersController::class, 'destroy'])->name('deleteUser');
+Route::post('/admin/users/update/{id}', [UsersController::class, 'update'])->name('updateUser');
 
-// Route::get('/', function() {
-//     return "test";
-// }
-// );
+//bookings
+Route::get('/admin/bookings', [BookingsController::class, 'index'])->name('viewBookings');;
+Route::get('/admin/bookings/create', [BookingsController::class, 'create'])->name('createBooking');;
+Route::post('/admin/bookings/edit', [BookingsController::class, 'edit'])->name('editBooking');;
+Route::post('/admin/bookings/delete/{id}', [BookingsController::class, 'destroy'])->name('deleteBooking');;
+Route::post('/admin/bookings/update/{id}', [BookingsController::class, 'update'])->name('updateBooking');;
+Route::post('/admin/bookings/store', [BookingsController::class, 'store'])->name('storeBooking');;
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-// Route::get('/user/home', function(){
-//     return view('home');
-// });
-
-// Route::get('/admin/panel', function(){
-//     return view('panel');
-// });
-
-// Auth::routes();
-
-// Route::get('/home', [\App\Http\Controllers\Admin\HomeController::class, 'index'])->name('home');
-
-// Auth::routes();
-
-// Route::get('/home', [\App\Http\Controllers\Admin\HomeController::class, 'index'])->name('home');
-
-// Auth::routes();
-
-//Route::get('/home', [\App\Http\Controllers\Admin\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 
-Route::get('/home', [\App\Http\Controllers\User\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');

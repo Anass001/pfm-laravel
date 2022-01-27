@@ -17,7 +17,6 @@ class CreateRoomsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('room_type_id');
             $table->foreign('room_type_id')->references('id')->on('room_types')->cascadeOnDelete();
-            $table->integer('max_occupancy');
             $table->unsignedBigInteger('property_id');
             $table->foreign('property_id')->references('id')->on('properties')->cascadeOnDelete();
             $table->timestamps();

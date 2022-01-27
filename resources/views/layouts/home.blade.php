@@ -9,7 +9,7 @@
                     <div class="container ie-h-align-center-fix">
                         <div class="row">
                             <div class="col-xs-12 ml-auto mr-auto ie-container-width-fix">
-                                <form action="/seek" method="post" class="tm-search-form tm-section-pad-2">
+                                <form class="tm-search-form tm-section-pad-2" action="{{route('showResults')}}" method="post">
                                     @csrf
                                     <div class="form-row tm-search-form-row">
                                         <div class="form-group tm-form-element tm-form-element-100">

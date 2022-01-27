@@ -1,40 +1,59 @@
-@extends('layouts.app')
+@extends('admin.main')
 
-@section('content')
-<form>
-    <div class="form-row">
-        <div class="col-md-4 mb-3">
-            <label for="validationDefault01">First name</label>
-            <input type="text" class="form-control" id="validationDefault01" placeholder="First name" value="Mark" required>
+@section('title','properties')
+
+@section('main-content')
+
+    <div class="card m-4">
+        <div class="card-header">
+            <i class="fas fa-hotel"></i>
+            properties
         </div>
-        <div class="col-md-4 mb-3">
-            <label for="validationDefault02">Last name</label>
-            <input type="text" class="form-control" id="validationDefault02" placeholder="Last name" value="Otto" required>
-        </div>
-        <div class="col-md-4 mb-3">
-            <label for="validationDefaultUsername">Username</label>
-            <div class="input-group">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroupPrepend2">@</span>
-                </div>
-                <input type="text" class="form-control" id="validationDefaultUsername" placeholder="Username" aria-describedby="inputGroupPrepend2" required>
-            </div>
+        <div class="card-body">
+            <button style="float: right;" class="btn btn-primary mb-3 ms-3">
+                <a href="{{ route('createProperty') }}" class="text-decoration-none text-white" target="_self">
+                    <i class="fas fa-plus me-2"></i>Add Property
+                </a>
+            </button>
+
+            <table id="datatablesSimple">
+                <thead>
+                <tr>
+                    <th>Property ID</th>
+                    <th>Title</th>
+                    <th>Type</th>
+                    <th>Address</th>
+                    <th>Rating</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach($properties as $property)
+                    <tr>
+                        <td>{{ $property->id }}</td>
+                        <td>{{ $property->title }}</td>
+                        <td>{{ $property->propertyType->description }}</td>
+                        <td>{{ $property->address }}, {{ $property->zip_code }} {{ $property->city }}
+                            , {{ $property->country }}</td>
+                        <td>{{ $property->rating }}</td>
+                        <td class="d-flex justify-content-center">
+                            <form method="post" action="{{route('editProperty', ['id' => $property->id])}}">
+                                @csrf
+                                <button class="btn" type="submit">
+                                    <i class="fas fa-pen text-black me-2"></i>
+                                </button>
+                            </form>
+                            <form method="post" action="{{route('deleteProperty', ['id' => $property->id])}}">
+                                @csrf
+                                <button class="btn" type="submit">
+                                    <i class="fas fa-trash-alt text-danger"></i>
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                @endforeach
+                </tbody>
+            </table>
         </div>
     </div>
-    <div class="form-row">
-        <div class="col-md-6 mb-3">
-            <label for="validationDefault03">City</label>
-            <input type="text" class="form-control" id="validationDefault03" placeholder="City" required>
-        </div>
-        <div class="col-md-3 mb-3">
-            <label for="validationDefault04">State</label>
-            <input type="text" class="form-control" id="validationDefault04" placeholder="State" required>
-        </div>
-        <div class="col-md-3 mb-3">
-            <label for="validationDefault05">Zip</label>
-            <input type="text" class="form-control" id="validationDefault05" placeholder="Zip" required>
-        </div>
-    </div>
-    <button class="btn btn-primary" type="submit">Submit form</button>
-</form>
+
 @endsection

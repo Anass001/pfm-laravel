@@ -38,7 +38,6 @@
         <!-- Top Navbar -->
         <div class="container">
             <div class="row">
-
                 <nav class="navbar navbar-expand-lg narbar-light">
                     <a class="navbar-brand mr-auto" href="#">BookingManager</a>
                     <button type="button" id="nav-toggle" class="navbar-toggler collapsed" data-toggle="collapse"

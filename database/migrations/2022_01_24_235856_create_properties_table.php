@@ -17,13 +17,14 @@ class CreatePropertiesTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('description');
-            $table->string('property_type');
+            $table->unsignedBigInteger('property_type_id');
+            $table->foreign('property_type_id')->references('id')->on('property_types')->cascadeOnDelete();
             $table->string('address');
             $table->integer('zip_code');
             $table->string('city');
             $table->string('country');
             $table->float('regular_room_price');
-            $table->float('rating');
+            $table->float('rating')->default(0);
             $table->timestamps();
         });
     }

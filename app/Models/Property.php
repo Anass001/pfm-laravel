@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Property extends Model
 {
-    protected $fillable = ['title', 'description', 'property_type', 'regular_room_price', 'address', 'zip_code', 'city', 'country'];
+    protected $fillable = ['title', 'description', 'property_type_id', 'regular_room_price', 'address', 'zip_code', 'city', 'country'];
 
     public function reviews(){
         return $this->hasMany(Review::class);
@@ -23,6 +23,10 @@ class Property extends Model
 
     public function bookings(){
         return $this->hasMany(Booking::class);
+    }
+
+    public function propertyType(){
+        return $this->belongsTo(PropertyType::class);
     }
 
     use HasFactory;
