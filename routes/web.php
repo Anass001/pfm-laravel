@@ -17,20 +17,28 @@ use App\Http\Controllers\DashboardController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', [\App\Http\Controllers\User\HomeController::class, 'index']);
-Route::get('/articles/{title}', [\App\Http\Controllers\User\HomeController::class, 'articles']);
+Route::get('/', [\App\Http\Controllers\User\HomeController::class, 'index'])->name('home');
 Route::post('/seek',[FindRoomController::class, 'index'] );
 
-Route::get('/admin',[\App\Http\Controllers\Admin\HomeController::class, 'index'] );
+// Route::get('/admin',[\App\Http\Controllers\Admin\HomeController::class, 'index'])->name('admin');
 
-Route::get('/admin/properties',[\App\Http\Controllers\Admin\PropertiesController::class, 'index'] );
-Route::post('/admin/properties/create',[\App\Http\Controllers\Admin\PropertiesController::class, 'create'] );
-Route::post('/admin/properties/edit',[\App\Http\Controllers\Admin\PropertiesController::class, 'edit'] );
+// Route::get('/admin/properties',[\App\Http\Controllers\Admin\PropertiesController::class, 'index'] );
+// Route::post('/admin/properties/create',[\App\Http\Controllers\Admin\PropertiesController::class, 'create'] );
+// Route::post('/admin/properties/edit',[\App\Http\Controllers\Admin\PropertiesController::class, 'edit'] );
 
-Route::get('/admin/users',[\App\Http\Controllers\Admin\UsersController::class, 'index'] );
-Route::post('/admin/users/create',[\App\Http\Controllers\Admin\UsersController::class, 'create'] );
-Route::post('/admin/users/edit',[\App\Http\Controllers\Admin\UsersController::class, 'edit'] );
+// Route::get('/admin/users',[\App\Http\Controllers\Admin\UsersController::class, 'index'] );
+// Route::post('/admin/users/create',[\App\Http\Controllers\Admin\UsersController::class, 'create'] );
+// Route::post('/admin/users/edit',[\App\Http\Controllers\Admin\UsersController::class, 'edit'] );
 
+Route::group(['middleware' => ['admin']], function () {
+    Route::get('/admin',[\App\Http\Controllers\Admin\HomeController::class, 'index'])->name('admin');
+    Route::get('/admin/properties',[\App\Http\Controllers\Admin\PropertiesController::class, 'index'])->name('admin.properties');
+    Route::post('/admin/properties/create',[\App\Http\Controllers\Admin\PropertiesController::class, 'create'])->name('admin.properties.create');
+    Route::post('/admin/properties/edit',[\App\Http\Controllers\Admin\PropertiesController::class, 'edit'])->name('admin.properties.edit');
+    Route::get('/admin/users',[\App\Http\Controllers\Admin\UsersController::class, 'index'])->name('admin.users');
+    Route::post('/admin/users/create',[\App\Http\Controllers\Admin\UsersController::class, 'create'])->name('admin.users.create');
+    Route::post('/admin/users/edit',[\App\Http\Controllers\Admin\UsersController::class, 'edit'])->name('admin.users.edit');
+});
 // Route::get('/', function() {
  //     return "test";
  // }
@@ -71,9 +79,9 @@ Route::post('/login', [LoginController::class, 'login']);
 Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
 
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 
 Route::get('/home', [\App\Http\Controllers\User\HomeController::class, 'index'])->name('home');

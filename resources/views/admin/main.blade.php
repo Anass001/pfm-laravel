@@ -39,7 +39,13 @@
                 <li>
                     <hr class="dropdown-divider"/>
                 </li>
-                <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                <li>
+                    <form action="{{route('logout')}}" method="post">
+                        @csrf
+                        <input style="color:#1a1c20; background-color: rgba(117, 190, 218, 0.0); border:none; width:100%; cursor: pointer;"
+                            type="submit" class="nav-link text-left" value="{{__('Logout')}}">
+                    </form>
+                </li>
             </ul>
         </li>
     </ul>

@@ -39,7 +39,7 @@ class LoginController extends Controller
         {
             $response = Gate::inspect('access-admin');
             if ($response->allowed())
-                redirect()->route('admin');
+                return redirect()->route('admin');
             else
                 return redirect()->route('home');
         }
