@@ -19,25 +19,29 @@ use Illuminate\Support\Facades\Route;
 */
 
 //main
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('userIndex');
 Route::post('/results', [FindRoomController::class, 'index'])->name('showResults');
 Route::get('/admin', [App\Http\Controllers\Admin\HomeController::class, 'index']);
 
-//properties
+//properties - admin
 Route::get('/admin/properties', [PropertiesController::class, 'index'])->name('viewProperties');
 Route::get('/admin/properties/create', [PropertiesController::class, 'create'])->name('createProperty');
 Route::post('/admin/properties/edit/{id}', [PropertiesController::class, 'edit'])->name('editProperty');
 Route::post('/admin/properties/delete/{id}', [PropertiesController::class, 'destroy'])->name('deleteProperty');
 Route::post('/admin/properties/update/{id}', [PropertiesController::class, 'update'])->name('updateProperty');
 Route::post('/admin/properties/store', [PropertiesController::class, 'store'])->name('storeProperty');
-Route::get('/property/{title}', [HomeController::class, 'property']);
-//users
+
+//properties - user
+Route::post('/properties/{id}', [\App\Http\Controllers\User\PropertiesController::class, 'show'])->name('viewProperty');
+//Route::get('/property/{title}', [HomeController::class, 'property']);
+
+//users - admin
 Route::get('/admin/users', [UsersController::class, 'index'])->name('viewUsers');
 Route::post('/admin/users/edit', [UsersController::class, 'edit'])->name('editUser');
 Route::post('/admin/users/delete{id}', [UsersController::class, 'destroy'])->name('deleteUser');
 Route::post('/admin/users/update/{id}', [UsersController::class, 'update'])->name('updateUser');
 
-//bookings
+//bookings - admin
 Route::get('/admin/bookings', [BookingsController::class, 'index'])->name('viewBookings');;
 Route::get('/admin/bookings/create', [BookingsController::class, 'create'])->name('createBooking');;
 Route::post('/admin/bookings/edit', [BookingsController::class, 'edit'])->name('editBooking');;

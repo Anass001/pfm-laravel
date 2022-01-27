@@ -29,7 +29,7 @@
                     <div class="right" style="display:flex;justify-content:center; gap: 10px">
                     <div class="right-pics" style="width: 300px">
                         @foreach ($property['imgUrl'] as $pic)
-                            <img src={{$pic}} style="width:150px; height:auto; margin-top: 10px;margin-bottom:10px">
+                            <img style='width:150px; height:auto; margin-top: 10px; margin-bottom:10px' src='{{$pic}}' alt="hotel photo">
                         @endforeach
                     </div>
                     <img src={{$property['imgUrl'][0]}} alt="" style="width: auto ;height: 300px" />

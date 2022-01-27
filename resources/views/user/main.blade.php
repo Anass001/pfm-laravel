@@ -39,6 +39,7 @@
         <div class="container">
             <div class="row">
                 <nav class="navbar navbar-expand-lg narbar-light">
+
                     <a class="navbar-brand mr-auto" href="/">BookingManager</a>
                     <button type="button" id="nav-toggle" class="navbar-toggler collapsed" data-toggle="collapse"
                             data-target="#mainNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -70,6 +71,7 @@
         @yield('main-content')
     </div>
 
+<<<<<<< HEAD:resources/views/layouts/main.blade.php
     <!-- <footer style="display: flex; position:relative ;width: 100%; height: 50px; bottom: 0;flex-direction:row;justify-content:center;background-color: #003580 ;color: white !important">
          <div>
          <p style="margin:auto" >
@@ -78,6 +80,17 @@
        - Design: Tooplate</p>
          </div>
          </footer> -->
+=======
+    <footer
+        style="display: flex; position:relative ;width: 100%; height: 50px; bottom: 0;flex-direction:row;justify-content:center;background-color: #003580 ;color: white !important">
+        <div>
+            <p style="margin:auto">
+                Copyright &copy; <span class="tm-current-year">2018</span> Your Company
+
+                - Design: Tooplate</p>
+        </div>
+    </footer>
+>>>>>>> 9b2f106684e403595fec5c42109d7690059e000a:resources/views/user/main.blade.php
 </div>
 
 <!-- load JS files -->
