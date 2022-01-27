@@ -3,10 +3,10 @@
 
     @section('main-content')
         <div class="article">
-            <h1>{{ $data['title']  }}}}</h1>
+            <h1>{{ $data['title']  }}</h1>
             <h2>{{  $data['short_details'] }}</h2>
             <p>
-            {{ $data['text']  }}}}
+            {{ $data['text']  }}
             </p>
             </div>
 
