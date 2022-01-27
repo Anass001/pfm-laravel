@@ -31,7 +31,7 @@ class LoginController extends Controller
             'password' => 'required',
         ]);
 
-        Auth::attempt([$field => $login, 'password' => $request->password]);
+        Auth::attempt([$field => $login, 'password' => $request->password], $request->remember);
 
         if (Auth::check())
             return redirect()->route('home');

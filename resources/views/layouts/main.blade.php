@@ -12,6 +12,7 @@
     <!-- Google web font "Open Sans" -->
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">                <!-- Font Awesome -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">                                      <!-- Bootstrap style -->
+                                 <!-- Bootstrap style -->
     <link rel="stylesheet" type="text/css" href="/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="/slick/slick-theme.css"/>
     <link rel="stylesheet" type="text/css" href="/css/datepicker.css"/>
@@ -19,7 +20,7 @@
 
 </head>
 
-<body>
+<body style="background-color:#03256d">
 <div class="tm-main-content" id="top">
     <div class="tm-top-bar-bg"></div>
     <div class="tm-top-bar" id="tm-top-bar">
