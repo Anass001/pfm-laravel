@@ -70,14 +70,14 @@
         @yield('main-content')
     </div>
 
-    <footer style="display: flex; position:relative ;width: 100%; height: 50px; bottom: 0;flex-direction:row;justify-content:center;background-color: #003580 ;color: white !important">
-        <div>
-            <p style="margin:auto" >
-                Copyright &copy; <span class="tm-current-year">2018</span> Your Company
+    <!-- <footer style="display: flex; position:relative ;width: 100%; height: 50px; bottom: 0;flex-direction:row;justify-content:center;background-color: #003580 ;color: white !important">
+         <div>
+         <p style="margin:auto" >
+         Copyright &copy; <span class="tm-current-year">2018</span> Your Company
 
-                - Design: Tooplate</p>
-        </div>
-    </footer>
+       - Design: Tooplate</p>
+         </div>
+         </footer> -->
 </div>
 
 <!-- load JS files -->
