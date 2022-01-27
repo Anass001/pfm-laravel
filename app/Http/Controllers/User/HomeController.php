@@ -24,6 +24,19 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('layouts.home');
+        $p1 = array(
+            'id' => 1,
+            'imgUrl' => "/img/1.png",
+            'desc' => "sqdqsfuhdsoghsdqiuhgisdfhgosfdhgoifdshjgoidfhghodfhgofdhoghfdoghdfoghodifhgoidfhgoifdhgoihdfoighdfoighoidfhgoidfhgoidfhgoihdfogi0",
+            'title' => "villa mrida"
+        );
+      $p2 = array(
+            'id' => 2,
+            'imgUrl' => "/img/2.png",
+            'desc' => 'sqdqsfuhdsoghsdqiuhgisdfhgosfdhgoifdshjgoidfhghodfhgofdhoghfdoghdfoghodifhgoidfhgoifdhgoihdfoighdfoighoidfhgoidfhgoidfhgoihdfogi0',
+            'title' => "villa mrida bzaf"
+        );
+      $properties = array($p1, $p2);
+      return view('layouts.home')->with('properties', $properties);
     }
 }

@@ -113,98 +113,21 @@
                 </div>
             </div>
 
-            <div class="tm-section tm-section-pad tm-bg-gray" id="tm-section-4">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8">
-                            <div class="tm-article-carousel">
-                                <article class="tm-bg-white mr-2 tm-carousel-item">
-                                    <img src="img/img-01.jpg" alt="Image" class="img-fluid">
-                                    <div class="tm-article-pad">
-                                        <header><h3 class="text-uppercase tm-article-title-2">Go to Los Angeles</h3></header>
-                                        <p>Best Price 100% off </p>
-                                        <a href="offer/los_angeles" class="text-uppercase btn-primary tm-btn-primary">Get More Info.</a>
-                                    </div>
-                                </article>
-                                <article class="tm-bg-white mr-2 tm-carousel-item">
-                                    <img src="img/img-02.jpg" alt="Image" class="img-fluid">
-                                    <div class="tm-article-pad">
-                                        <header><h3 class="text-uppercase tm-article-title-2">Top 10 destination </h3></header>
-                                        <p>The best places in the world</p>
-                                        <a href="articles/10_destination" class="text-uppercase btn-primary tm-btn-primary">View Detail</a>
-                                    </div>
-                                </article>
-                                <article class="tm-bg-white mr-2 tm-carousel-item">
-                                    <img src="img/img-01.jpg" alt="Image" class="img-fluid">
-                                    <div class="tm-article-pad">
-                                        <header><h3 class="text-uppercase tm-article-title-2">The 5 Best Places to visit in Winter</h3></header>
-                                        <p>Cold weather is toxic stay safe </p>
-                                        <a href="articles/cold_toxic" class="text-uppercase btn-primary tm-btn-primary">More Info.</a>
-                                    </div>
-                                </article>
-                                <article class="tm-bg-white mr-2 tm-carousel-item">
-                                    <img src="img/img-02.jpg" alt="Image" class="img-fluid">
-                                    <div class="tm-article-pad">
-                                        <header><h3 class="text-uppercase tm-article-title-2">Absolutely nothing </h3></header>
-                                        <p>Really nothing</p>
-                                        <a href="articles/nothing" class="text-uppercase btn-primary tm-btn-primary">Detail Info.</a>
-                                    </div>
-                                </article>
-                                <article class="tm-bg-white mr-2 tm-carousel-item">
-                                    <img src="img/img-01.jpg" alt="Image" class="img-fluid">
-                                    <div class="tm-article-pad">
-                                        <header><h3 class="text-uppercase tm-article-title-2">Go to Casablanca </h3></header>
-                                        <p>Casablanca is a beautifull city go for it </p>
-                                        <a href="offers/casablanca" class="text-uppercase btn-primary tm-btn-primary">Read More</a>
-                                    </div>
-                                </article>
-                                <article class="tm-bg-white tm-carousel-item">
-                                    <img src="img/img-02.jpg" alt="Image" class="img-fluid">
-                                    <div class="tm-article-pad">
-                                        <header><h3 class="text-uppercase tm-article-title-2">Visit Tetouan</h3></header>
-                                        <p>Now for a limited time get 200%</p>
-                                        <a href="offers/tetouan" class="text-uppercase btn-primary tm-btn-primary">More Details</a>
-                                    </div>
-                                </article>
-                            </div>
-                        </div>
 
-                        <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 tm-recommended-container">
-                            <div class="tm-bg-white">
-                                <div class="tm-bg-primary tm-sidebar-pad">
-                                    <h3 class="tm-color-white tm-sidebar-title">Recommended Places</h3>
-                                    <p class="tm-color-white tm-margin-b-0 tm-font-light">Take our suggestion and go to hell</p>
-                                </div>
-                                <div class="tm-sidebar-pad-2">
-                                    <a href="offers/Europe" class="media tm-media tm-recommended-item">
-                                        <img src="img/tn-img-01.jpg" alt="Image">
-                                        <div class="media-body tm-media-body tm-bg-gray">
-                                            <h4 class="text-uppercase tm-font-semibold tm-sidebar-item-title">Europe</h4>
-                                        </div>
-                                    </a>
-                                    <a href="offers/Asia" class="media tm-media tm-recommended-item">
-                                        <img src="img/tn-img-02.jpg" alt="Image">
-                                        <div class="media-body tm-media-body tm-bg-gray">
-                                            <h4 class="text-uppercase tm-font-semibold tm-sidebar-item-title">Asia</h4>
-                                        </div>
-                                    </a>
-                                    <a href="offers/Africa" class="media tm-media tm-recommended-item">
-                                        <img src="img/tn-img-03.jpg" alt="Image">
-                                        <div class="media-body tm-media-body tm-bg-gray">
-                                            <h4 class="text-uppercase tm-font-semibold tm-sidebar-item-title">Africa</h4>
-                                        </div>
-                                    </a>
-                                    <a href="offers/Sout_America" class="media tm-media tm-recommended-item">
-                                        <img src="img/tn-img-04.jpg" alt="Image">
-                                        <div class="media-body tm-media-body tm-bg-gray">
-                                            <h4 class="text-uppercase tm-font-semibold tm-sidebar-item-title">South America</h4>
-                                        </div>
-                                     </a>
-                                </div>
+            <div class="properties-list-vertical" style="display:flex;flex-direction:row;justify-content: center;gap: 50px;overflow:auto;position:relative;margin-bottom:100px">
+                @foreach ($properties as $p)
+                    <div class="card" style="width: 18rem;">
+                        <img src={{  "/img/" . $p['imgUrl'] }} style="width:100%;height: 100px">
+                        <div class="card-body">
+                    <h5 class="card-title">{{$p['title']}}</h5>
+                    <p class="card-text">
+                        {{$p['desc']}}
+                    </p>
+                    <a href={{"/property/" . $p['id']}} class="btn btn-primary"> Go check </a>
                             </div>
-                        </div>
                     </div>
-                 </div>
+                @endforeach
+
             </div>
 
 
