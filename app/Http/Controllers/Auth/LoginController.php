@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 
 use App\Models\User;
 
@@ -32,10 +33,16 @@ class LoginController extends Controller
         ]);
 
         Auth::attempt([$field => $login, 'password' => $request->password], $request->remember);
+        
 
         if (Auth::check())
-            return redirect()->route('home');
-
+        {
+            $response = Gate::inspect('access-admin');
+            if ($response->allowed())
+                redirect()->route('admin');
+            else
+                return redirect()->route('home');
+        }
         return redirect()->back()->withErrors([
             'credentials' => 'Please verify your email and password'
         ]);

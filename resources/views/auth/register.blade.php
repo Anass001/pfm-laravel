@@ -4,6 +4,7 @@
 <style>
  #formPageContainer{
     min-height: 100vh;
+    background-color:#03256d;
 }
 
 .loginContainer{
@@ -13,9 +14,9 @@
 
 </style>
 <div id="formPageContainer">
-    <div class="loginContainer row justify-content-center">
+    <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card loginContainer">
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">

@@ -4,18 +4,20 @@
 <style>
  #formPageContainer{
     min-height: 100vh;
+    background-color:#03256d;
 }
 
 .loginContainer{
     margin: 200px auto;
     max-width: 800px;
-}   
+}
+
 </style>
 <div id="formPageContainer">
-    <div class="loginContainer row justify-content-center">
+    <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+            <div class="card loginContainer">
+                <div class="card-header" st>{{ __('Login') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
