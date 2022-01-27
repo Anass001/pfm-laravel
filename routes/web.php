@@ -19,17 +19,20 @@ use Illuminate\Support\Facades\Route;
 */
 
 //main
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('userIndex');
 Route::post('/results', [FindRoomController::class, 'index'])->name('showResults');
 Route::get('/admin', [App\Http\Controllers\Admin\HomeController::class, 'index']);
 
-//properties
+//properties - admin
 Route::get('/admin/properties', [PropertiesController::class, 'index'])->name('viewProperties');
 Route::get('/admin/properties/create', [PropertiesController::class, 'create'])->name('createProperty');
 Route::post('/admin/properties/edit/{id}', [PropertiesController::class, 'edit'])->name('editProperty');
 Route::post('/admin/properties/delete/{id}', [PropertiesController::class, 'destroy'])->name('deleteProperty');
 Route::post('/admin/properties/update/{id}', [PropertiesController::class, 'update'])->name('updateProperty');
 Route::post('/admin/properties/store', [PropertiesController::class, 'store'])->name('storeProperty');
+
+//properties - user
+Route::post('/properties/{id}', [\App\Http\Controllers\User\PropertiesController::class, 'show'])->name('viewProperty');
 
 //users
 Route::get('/admin/users', [UsersController::class, 'index'])->name('viewUsers');
