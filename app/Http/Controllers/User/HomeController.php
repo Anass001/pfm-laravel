@@ -26,17 +26,27 @@ class HomeController extends Controller
     {
         $p1 = array(
             'id' => 1,
-            'imgUrl' => "/img/1.png",
+            'imgUrl' => array('/img/pic_1.jpg'),
             'desc' => "sqdqsfuhdsoghsdqiuhgisdfhgosfdhgoifdshjgoidfhghodfhgofdhoghfdoghdfoghodifhgoidfhgoifdhgoihdfoighdfoighoidfhgoidfhgoidfhgoihdfogi0",
             'title' => "villa mrida"
         );
       $p2 = array(
             'id' => 2,
-            'imgUrl' => "/img/2.png",
+            'imgUrl' => array('/img/pic_2.jpeg') ,
             'desc' => 'sqdqsfuhdsoghsdqiuhgisdfhgosfdhgoifdshjgoidfhghodfhgofdhoghfdoghdfoghodifhgoidfhgoifdhgoihdfoighdfoighoidfhgoidfhgoidfhgoihdfogi0',
             'title' => "villa mrida bzaf"
         );
       $properties = array($p1, $p2);
       return view('layouts.home')->with('properties', $properties);
+    }
+
+    public function property($title) {
+        $property = array(
+            'id' => 1,
+            'title' => "ddd",
+            'location' => 'casablanca',
+            'imgUrl' => array('/img/pic_1.jpg', '/img/pic_2.jpeg', '/img/pic_3.jpeg')
+        );
+        return view('layouts.property_details')->with('property', $property);
     }
 }

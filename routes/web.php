@@ -30,7 +30,7 @@ Route::post('/admin/properties/edit/{id}', [PropertiesController::class, 'edit']
 Route::post('/admin/properties/delete/{id}', [PropertiesController::class, 'destroy'])->name('deleteProperty');
 Route::post('/admin/properties/update/{id}', [PropertiesController::class, 'update'])->name('updateProperty');
 Route::post('/admin/properties/store', [PropertiesController::class, 'store'])->name('storeProperty');
-
+Route::get('/property/{title}', [HomeController::class, 'property']);
 //users
 Route::get('/admin/users', [UsersController::class, 'index'])->name('viewUsers');
 Route::post('/admin/users/edit', [UsersController::class, 'edit'])->name('editUser');
