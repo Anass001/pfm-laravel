@@ -106,8 +106,7 @@
                         @foreach($bookings as $booking)
                         <tr>
                             <td>{{ $booking->id }}</td>
-                            <td>{{ $booking->user->first_name }}</td>
-                            <td>{{ $booking->user->last_name }}</td>
+                            <td>{{ $booking->user->name }}</td>
                             <td>{{ $booking->arrival_date }}</td>
                             <td>{{ $booking->checkout_date }}</td>
                             <td>{{ $booking->property->title }}</td>

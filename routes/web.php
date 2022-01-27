@@ -38,7 +38,7 @@ Route::post('/properties/{id}', [\App\Http\Controllers\User\PropertiesController
 //users - admin
 Route::get('/admin/users', [UsersController::class, 'index'])->name('viewUsers');
 Route::post('/admin/users/edit', [UsersController::class, 'edit'])->name('editUser');
-Route::post('/admin/users/delete{id}', [UsersController::class, 'destroy'])->name('deleteUser');
+Route::post('/admin/users/delete/{id}', [UsersController::class, 'destroy'])->name('deleteUser');
 Route::post('/admin/users/update/{id}', [UsersController::class, 'update'])->name('updateUser');
 
 //bookings - admin

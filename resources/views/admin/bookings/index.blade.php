@@ -19,8 +19,7 @@
                 <thead>
                 <tr>
                     <th>Booking ID</th>
-                    <th>First name</th>
-                    <th>Last name</th>
+                    <th>Name</th>
                     <th>Arrival date</th>
                     <th>Checkout date</th>
                     <th>Property</th>
@@ -32,8 +31,7 @@
                 @foreach($bookings as $booking)
                     <tr>
                         <td>{{ $booking->id }}</td>
-                        <td>{{ $booking->user->first_name }}</td>
-                        <td>{{ $booking->user->last_name }}</td>
+                        <td>{{ $booking->user->name }}</td>
                         <td>{{ $booking->arrival_date }}</td>
                         <td>{{ $booking->checkout_date }}</td>
                         <td>{{ $booking->property->title }}</td>

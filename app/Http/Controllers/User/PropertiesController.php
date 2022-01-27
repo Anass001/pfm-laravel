@@ -10,7 +10,6 @@ class PropertiesController extends Controller
 {
     public function show($id)
     {
-        info('show function called');
         $property = Property::find($id);
         return view('user.properties.show', ['property' => $property]);
     }

@@ -1,8 +1,6 @@
 @extends('user.main')
 @section('title', 'found')
 
-
-
 @section('main-content')
     <div class="root" style="background-color: #fbfbfb;">
         <div class="container justify-content-center d-flex flex-column pt-5">
