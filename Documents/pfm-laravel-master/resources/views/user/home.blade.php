@@ -99,19 +99,19 @@
                     <i class="fa tm-fa-6x fa-legal tm-color-primary tm-margin-b-20"></i>
                     <h3 class="tm-color-primary tm-article-title-1">Best homes ever</h3>
                     <p>With more than 1111111111 property </p>
-                    <a href="#" class="text-uppercase tm-color-primary tm-font-semibold">Discorver more...</a>
+                    <a href="/" class="text-uppercase tm-color-primary tm-font-semibold">Discorver more...</a>
                 </article>
                 <article class="col-sm-12 col-md-4 col-lg-4 col-xl-4 tm-article">
                     <i class="fa tm-fa-6x fa-plane tm-color-primary tm-margin-b-20"></i>
                     <h3 class="tm-color-primary tm-article-title-1">Airplane Tickets</h3>
                     <p>Affiliated with more than 111 airlines craps </p>
-                    <a href="#" class="text-uppercase tm-color-primary tm-font-semibold">Discorver more...</a>
+                    <a href="/" class="text-uppercase tm-color-primary tm-font-semibold">Discorver more...</a>
                 </article>
                 <article class="col-sm-12 col-md-4 col-lg-4 col-xl-4 tm-article">
                     <i class="fa tm-fa-6x fa-life-saver tm-color-primary tm-margin-b-20"></i>
                     <h3 class="tm-color-primary tm-article-title-1">Best Trains ever</h3>
                     <p>Just Ride it or leave it .</p>
-                    <a href="#" class="text-uppercase tm-color-primary tm-font-semibold">Discover more...</a>
+                    <a href="/" class="text-uppercase tm-color-primary tm-font-semibold">Discover more...</a>
                 </article>
             </div>
         </div>
@@ -126,7 +126,7 @@
                             <div class="tm-article-pad">
                                 <header><h3 class="text-uppercase tm-article-title-2">Go to Los Angeles</h3></header>
                                 <p>Best Price 100% off </p>
-                                <a href="offer/los_angeles" class="text-uppercase btn-primary tm-btn-primary">Get More
+                                <a href="/" class="text-uppercase btn-primary tm-btn-primary">Get More
                                     Info.</a>
                             </div>
                         </article>
@@ -135,7 +135,7 @@
                             <div class="tm-article-pad">
                                 <header><h3 class="text-uppercase tm-article-title-2">Top 10 destination </h3></header>
                                 <p>The best places in the world</p>
-                                <a href="articles/10_destination" class="text-uppercase btn-primary tm-btn-primary">View
+                                <a href="/" class="text-uppercase btn-primary tm-btn-primary">View
                                     Detail</a>
                             </div>
                         </article>
@@ -145,7 +145,7 @@
                                 <header><h3 class="text-uppercase tm-article-title-2">The 5 Best Places to visit in
                                         Winter</h3></header>
                                 <p>Cold weather is toxic stay safe </p>
-                                <a href="articles/cold_toxic" class="text-uppercase btn-primary tm-btn-primary">More
+                                <a href="/" class="text-uppercase btn-primary tm-btn-primary">More
                                     Info.</a>
                             </div>
                         </article>
@@ -154,7 +154,7 @@
                             <div class="tm-article-pad">
                                 <header><h3 class="text-uppercase tm-article-title-2">Absolutely nothing </h3></header>
                                 <p>Really nothing</p>
-                                <a href="articles/nothing" class="text-uppercase btn-primary tm-btn-primary">Detail
+                                <a href="/" class="text-uppercase btn-primary tm-btn-primary">Detail
                                     Info.</a>
                             </div>
                         </article>
@@ -163,7 +163,7 @@
                             <div class="tm-article-pad">
                                 <header><h3 class="text-uppercase tm-article-title-2">Go to Casablanca </h3></header>
                                 <p>Casablanca is a beautifull city go for it </p>
-                                <a href="offers/casablanca" class="text-uppercase btn-primary tm-btn-primary">Read
+                                <a href="/" class="text-uppercase btn-primary tm-btn-primary">Read
                                     More</a>
                             </div>
                         </article>
@@ -186,25 +186,25 @@
                             <p class="tm-color-white tm-margin-b-0 tm-font-light">Take our suggestion and go to hell</p>
                         </div>
                         <div class="tm-sidebar-pad-2">
-                            <a href="offers/Europe" class="media tm-media tm-recommended-item">
+                            <a href="/" class="media tm-media tm-recommended-item">
                                 <img src="img/tn-img-01.jpg" alt="Image">
                                 <div class="media-body tm-media-body tm-bg-gray">
                                     <h4 class="text-uppercase tm-font-semibold tm-sidebar-item-title">Europe</h4>
                                 </div>
                             </a>
-                            <a href="offers/Asia" class="media tm-media tm-recommended-item">
+                            <a href="/" class="media tm-media tm-recommended-item">
                                 <img src="img/tn-img-02.jpg" alt="Image">
                                 <div class="media-body tm-media-body tm-bg-gray">
                                     <h4 class="text-uppercase tm-font-semibold tm-sidebar-item-title">Asia</h4>
                                 </div>
                             </a>
-                            <a href="offers/Africa" class="media tm-media tm-recommended-item">
+                            <a href="/" class="media tm-media tm-recommended-item">
                                 <img src="img/tn-img-03.jpg" alt="Image">
                                 <div class="media-body tm-media-body tm-bg-gray">
                                     <h4 class="text-uppercase tm-font-semibold tm-sidebar-item-title">Africa</h4>
                                 </div>
                             </a>
-                            <a href="offers/Sout_America" class="media tm-media tm-recommended-item">
+                            <a href="/" class="media tm-media tm-recommended-item">
                                 <img src="img/tn-img-04.jpg" alt="Image">
                                 <div class="media-body tm-media-body tm-bg-gray">
                                     <h4 class="text-uppercase tm-font-semibold tm-sidebar-item-title">South America</h4>

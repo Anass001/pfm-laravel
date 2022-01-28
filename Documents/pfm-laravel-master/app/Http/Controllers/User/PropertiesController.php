@@ -22,7 +22,6 @@ class PropertiesController extends Controller
     public function store(Request $request, $id)
     {
         $booking_info = $request->session()->get('booking_info');
-//        dd($booking_info);
 
         $booking = new Booking();
         $booking->property_id = $id;
@@ -40,8 +39,7 @@ class PropertiesController extends Controller
         $interval = $datetime1->diff($datetime2);
         $nights = $interval->format('%a');
         $booking->nights = $nights;
-        $booking->total_price = intval($nights) * intval($booking_info['adult']) * intval(Property::find($id)->regural_room_price);
-//        $booking->total_price = 0;
+        $booking->total_price = intval($nights) * intval($booking_info['adult']) * 1 * intval(Property::find($id)->regular_room_price);
         $booking->people_count = $booking_info['adult'];
         $booking->requested_room_type_id = 1;
         $booking->user_id = Auth::id();
