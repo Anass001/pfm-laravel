@@ -125,9 +125,12 @@
                             <p class="m-0 text-black-50" style="font-size:12px;">From</p>
                             <p class="fw-bold mb-0 h-50">MAD 163.99</p>
                         </div>
-                        <button class="btn btn-outline-primary fw-bold my-auto rounded-0"
-                                style="width:90px;height:36px;">Reserve
-                        </button>
+                        <form method="post" action="{{route('booking', ['id' => $property->id])}}">
+                            @csrf
+                            <button class="btn btn-outline-primary fw-bold my-auto rounded-0"
+                                    style="width:90px;height:36px;">Reserve
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>

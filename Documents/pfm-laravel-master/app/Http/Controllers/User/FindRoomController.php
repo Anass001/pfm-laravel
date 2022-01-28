@@ -27,6 +27,7 @@ class FindRoomController extends BaseController
         $city = $request->city;
         $results = Property::all()->where('city', $city);
         $booking_info = ['city' => $request->city, 'check_in' => $request['check-in'], 'check_out' => $request['check-out'], 'adult' => $request->adult, 'rooms' => $request->room];
-        return view('user.found', ['results' => $results, 'booking_info' => $booking_info]);
+        $request->session()->put('booking_info', $booking_info);
+        return view('user.found', ['results' => $results]);
     }
 }

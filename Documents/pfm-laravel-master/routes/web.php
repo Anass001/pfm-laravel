@@ -53,7 +53,7 @@ Route::post('/results', [FindRoomController::class, 'index'])->name('showResults
 
 //properties - user
 Route::post('/properties/{id}', [\App\Http\Controllers\User\PropertiesController::class, 'show'])->name('viewProperty');
-
+Route::post('/properties/store/{id}', [\App\Http\Controllers\User\PropertiesController::class, 'store'])->name('booking');
 
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
 Route::post('/register', [RegisterController::class, 'store']);
